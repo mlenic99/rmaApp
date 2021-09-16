@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.NewLandActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_items_newLand"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1"
+        app:layout_constraintEnd_toStartOf="@+id/tilRefNum"
+        app:layout_constraintHorizontal_weight="4"
+        android:theme="@style/TextLabel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:inputType="text"
+            android:hint="@string/name_hint"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilRefNum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_items_newLand"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tilName"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="2"
+        android:theme="@style/TextLabel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietRefNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:inputType="number"
+            android:maxLength="3"
+            android:hint="@string/ref_number"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCulture"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_items_newLand"
+        app:layout_constraintTop_toBottomOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tilArea"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintHorizontal_weight="4"
+        android:theme="@style/TextLabel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietCulture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:lines="1"
+            android:hint="@string/culture_hint"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilArea"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_items_newLand"
+        app:layout_constraintTop_toBottomOf="@id/guideline1"
+        app:layout_constraintStart_toEndOf="@id/tilCulture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        android:theme="@style/TextLabel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/area_ha_hint"
+            android:lines="1"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3"/>
+
+    <EditText
+        android:id="@+id/etLongitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/guideline2"
+        app:layout_constraintBottom_toTopOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf ="parent"
+        app:layout_constraintEnd_toStartOf="@id/etLatitude"
+        android:layout_margin="14dp"
+        android:paddingTop="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:hint="Latitude: -0.34"/>
+
+    <EditText
+        android:id="@+id/etLatitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:paddingTop="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/guideline2"
+        app:layout_constraintStart_toEndOf="@id/etLongitude"
+        app:layout_constraintBottom_toTopOf="@id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Longitude: 151.0"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <ImageButton
+        android:id="@+id/ibMarkerImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_marker"
+        app:layout_constraintBottom_toTopOf="@id/tilComment"
+        app:layout_constraintEnd_toStartOf="@id/bLocate"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline3"
+        app:layout_constraintVertical_bias="0.388"
+        app:tint="@color/marker" />
+
+    <Button
+        android:id="@+id/bLocate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="40dp"
+        app:layout_constraintTop_toBottomOf="@id/guideline3"
+        app:layout_constraintBottom_toTopOf="@id/tilComment"
+        app:layout_constraintStart_toEndOf="@id/ibMarkerImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/locate_button"
+        app:layout_constraintHorizontal_weight="3.5"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/bLocate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bUpdate"
+        android:layout_margin="@dimen/margin_items_newLand"
+        app:counterEnabled="true"
+        app:counterMaxLength="100">
+        
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietComm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:lines="4"
+            android:maxLines="4"
+            android:textSize="18sp"
+            android:hint="@string/hint_comment"
+            android:maxLength="100"
+            android:inputType="textMultiLine"
+            android:gravity="top|start"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            />
+        
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/bUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tilComment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/update_button"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
